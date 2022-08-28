@@ -16,7 +16,7 @@ Among those stochastic volatility models, the SABR model is the simplest stochas
 
 Consider a European option whose matured payoff at a maturity of T, denoted by VT , depends on a underlying rate FT . Under the appropriate martingale measure, a SABR model of the underlying rate process F is assumed to be. Clearly, it is an arbitrage-free model. Under the model, F follows a stochastic CEV process. Particularly, if β = 0, 0.5, 1, then it corresponds to a stochastic normal, CIR and log-normal processes, respectively. 
 
-The volatility term follows a geometric Brownian motion where the parameter ν is the volatility of the stochastic volatility term. In the model, F is in a general setting. In various cases, it can an equity index, a currency exchange rate, a forward interest swap rate, or an interest futures/forward rate. For interest rate derivatives, a forward risk-neutral measure is chosen such the underlying rate is a martingale.
+The volatility term follows a geometric Brownian motion where the parameter ν is the volatility of the stochastic volatility term. In the model, F is in a general setting. In various cases, it can an equity index, a currency exchange rate, a forward interest swap rate, or an interest futures/forward rate or an accumulator swap (see https://finpricing.com/lib/FxAccumulator.html). For interest rate derivatives, a forward risk-neutral measure is chosen such the underlying rate is a martingale.
 
 Clearly, those parameters in the SABR model are not market observable. Therefore, calibration procedure is the key step so that the calibrated SABR model captures the market skews and smiles. In our fixed income derivative applications, we need to consider swaptions, caplets/floorlets, and caps/floors. Swaptions, caplets and floorlets are examples of a single European option. Caps/floors are a portfolio of caplets/floorlets. In all our applications, the parameter β is selected exogenously.
 
@@ -32,11 +32,3 @@ The calibration to the cap market is more involved. Each cap is a portfolio of a
 The SABR becomes the calibrated cap pricing model which can handle cap market skews and smiles. This is the calibration approach for the cap market. It should be noticed that there is no presumption that this is the best approach to calibration to the cap market. However, under this practically feasible and aggressively simplified approach, matching of the at-the-money caps is given higher priority over the calibration to the skews and smiles. This is also recommended by the cap market due to the higher liquidity of the at-the-money caps.
 
 
-
-Reference:
-
-https://finpricing.com/lib/EqSpread.html
-
-https://zenodo.org/record/6625994#.YqEOK6gpBD8
-
-https://zenodo.org/record/6625994/files/sabrCalibration.pdf
